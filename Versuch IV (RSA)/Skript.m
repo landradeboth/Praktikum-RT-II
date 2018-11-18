@@ -10,6 +10,12 @@ clc;
 ks = -6.4;
 Tm = 0.27;
 ki = -7.27;
+freq_rad = sqrt(10/Tm);
+
+%% Zweipunktglied
+A_Zwei = (Tm*ks*ki)/(5*pi*(Tm+0.1));
+
+%% Dreipunktglied
 C = ((Tm*ks*ki)/(5*pi*(Tm + 0.1)))^2;
 A1 = sqrt((C + sqrt(C^2 - C))/2);
 A2 = sqrt((C - sqrt(C^2 - C))/2);
